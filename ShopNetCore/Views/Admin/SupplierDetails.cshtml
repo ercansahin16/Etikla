@@ -1,0 +1,88 @@
+﻿@model Supplier
+@{
+    ViewData["Title"] = "Marka Detayları";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i><span>@ViewBag.supplier</span> MARKA DETAY
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body flip-scroll">
+                <table class="table table-bordered table-striped table-condensed flip-content">
+                    <thead class="flip-content">
+                        <tr>
+                            <th width="20%">
+                                Key
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.SupplierID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.SupplierID)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.BrandName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.BrandName)
+                            </td>
+                        </tr>
+                        
+
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayNameFor(model => model.PhotoPath)
+                                </td>
+                                <td>
+                               <img src="~/resimler/@Model.PhotoPath" style="height:35px; width:60px;"/>
+                                </td>
+                            </tr>
+                       
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Active)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Active)
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+              <a class="btn btn-success" href="/Admin/SupplierIndex">Marka Formları</a>    
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>

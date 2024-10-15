@@ -1,0 +1,50 @@
+﻿/* Genel Stil */
+.about-section {
+  padding: 40px 0;
+}
+
+.about-title {
+  font-weight: bold;
+  color: #007ACC;
+  margin-bottom: 20px;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+}
+
+.about-box {
+  background-color: #f9f7f1; /* Hafif bej arka plan rengi */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  margin-bottom: 20px;
+}
+
+.about-heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  color: #007ACC;
+  margin-bottom: 20px;
+}
+
+.about-subheading {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  color: #007ACC;
+  margin-bottom: 10px;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Ayrım çizgisi */
+hr {
+  border-top: 2px solid #007ACC;
+  margin:  40px 0;
+}

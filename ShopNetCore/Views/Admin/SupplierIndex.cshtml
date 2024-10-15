@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Supplier>
+@{
+    ViewData["Title"] = "Markalar Formu";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+
+        <p>
+            <a asp-action="SupplierCreate" asp-controller="Admin" class="btn btn-success">
+
+                YENİ MARKA
+            </a>
+        </p>
+
+
+
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>MARKA LİSTESİ
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr style="background-color:gray;color:white; width:100%;">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SupplierID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BrandName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhotoPath)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Active)
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(model => item.SupplierID)
+                                    </td>
+                                    <td>
+                                        <span>
+                                            @Html.DisplayFor(model => item.BrandName)
+                                        </span>
+                                    </td>
+                                    <td>
+
+                                        <img src="~/resimler/@item.PhotoPath" style="width:60px; height:35px;" />
+                                    </td>
+                                    
+                                    
+                                    @if (item.Active)
+                                    {
+                                        <td>
+                                            <span class="label label-sm label-success">AKTİF</span>
+
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <span class="label label-sm label-danger">DEAKTİF </span>
+
+                                        </td>
+                                    }
+
+                                    <td>
+                                        <a asp-action="SupplierEdit" asp-route-id="@item.SupplierID" class="btn btn-primary">
+                                            DÜZELT
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="SupplierDetails" asp-route-id="@item.SupplierID" class="btn btn-info">
+                                            DETAY
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="SupplierDelete" asp-route-id="@item.SupplierID" class="btn btn-danger">
+                                            SİL
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>

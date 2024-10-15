@@ -1,0 +1,280 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\animate.css" />
+    <Content Remove="wwwroot\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\cloud-zoom.css" />
+    <Content Remove="wwwroot\css\color-css\home-2-color.css" />
+    <Content Remove="wwwroot\css\color-css\home-6-color.css" />
+    <Content Remove="wwwroot\css\fancybox\blank.gif" />
+    <Content Remove="wwwroot\css\fancybox\fancybox_loading.gif" />
+    <Content Remove="wwwroot\css\fancybox\fancybox_loading@2x.gif" />
+    <Content Remove="wwwroot\css\fancybox\fancybox_overlay.png" />
+    <Content Remove="wwwroot\css\fancybox\fancybox_sprite.png" />
+    <Content Remove="wwwroot\css\fancybox\fancybox_sprite@2x.png" />
+    <Content Remove="wwwroot\css\fancybox\jquery.fancybox.css" />
+    <Content Remove="wwwroot\css\fancybox\Thumbs.db" />
+    <Content Remove="wwwroot\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\css\images\bx_loader.gif" />
+    <Content Remove="wwwroot\css\images\controls.png" />
+    <Content Remove="wwwroot\css\images\Thumbs.db" />
+    <Content Remove="wwwroot\css\jquery-ui.css" />
+    <Content Remove="wwwroot\css\jquery.bxslider.min.css" />
+    <Content Remove="wwwroot\css\main.css" />
+    <Content Remove="wwwroot\css\mobile_menu.min.css" />
+    <Content Remove="wwwroot\css\normalize.css" />
+    <Content Remove="wwwroot\css\owl.carousel.css" />
+    <Content Remove="wwwroot\css\owl.theme.css" />
+    <Content Remove="wwwroot\css\owl.transitions.css" />
+    <Content Remove="wwwroot\css\responsive.css" />
+    <Content Remove="wwwroot\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\js\bx-slider.min.js" />
+    <Content Remove="wwwroot\js\countdown.js" />
+    <Content Remove="wwwroot\js\jquery.appear.js" />
+    <Content Remove="wwwroot\js\jquery.easing.1.3.min.js" />
+    <Content Remove="wwwroot\js\jquery.elevatezoom.js" />
+    <Content Remove="wwwroot\js\jquery.fancybox.pack.js" />
+    <Content Remove="wwwroot\js\jquery.mixitup.min.js" />
+    <Content Remove="wwwroot\js\jquery.mobilemenu.js" />
+    <Content Remove="wwwroot\js\jquery.scrollUp.min.js" />
+    <Content Remove="wwwroot\js\jquery.treeview.js" />
+    <Content Remove="wwwroot\js\main.js" />
+    <Content Remove="wwwroot\js\owl.carousel.min.js" />
+    <Content Remove="wwwroot\js\parallax.js" />
+    <Content Remove="wwwroot\js\plugins.js" />
+    <Content Remove="wwwroot\js\price_slider.js" />
+    <Content Remove="wwwroot\js\rs-slider.js" />
+    <Content Remove="wwwroot\js\vendor\jquery-1.11.3.min.js" />
+    <Content Remove="wwwroot\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Remove="wwwroot\js\wow.js" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrowleft.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrowright.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrows.psd" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_large_left.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_large_right.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_left.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_left2.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_right.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\arrow_right2.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\black50.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\bullet.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\bullets.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\bullets.psd" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\bullets2.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\bullet_boxed.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\coloredbg.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\grain.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\gridtile.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\gridtile_white.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\large_left.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\large_right.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\loader (1).gif" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\loader.gif" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\navigdots.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\shadow1.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\shadow2.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\shadow3.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\small_arrows.psd" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\small_left.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\small_left_boxed.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\small_right.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\small_right_boxed.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\Thumbs.db" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\timer.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\timerdot.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\transparent.jpg" />
+    <Content Remove="wwwroot\lib\rs-plugin\assets\white50.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\css\settings-ie8.css" />
+    <Content Remove="wwwroot\lib\rs-plugin\css\settings.css" />
+    <Content Remove="wwwroot\lib\rs-plugin\font\revicons.eot" />
+    <Content Remove="wwwroot\lib\rs-plugin\font\revicons.svg" />
+    <Content Remove="wwwroot\lib\rs-plugin\font\revicons.ttf" />
+    <Content Remove="wwwroot\lib\rs-plugin\font\revicons.woff" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\decor_inside.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\decor_inside_white.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\decor_testimonial.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\gradient\g30.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\gradient\g40.png" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\gradient\Thumbs.db" />
+    <Content Remove="wwwroot\lib\rs-plugin\images\Thumbs.db" />
+    <Content Remove="wwwroot\lib\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <Content Remove="wwwroot\lib\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Remove="wwwroot\lib\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Remove="wwwroot\lib\rs-plugin\js\jquery.themepunch.tools.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\animate.css" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\cloud-zoom.css" />
+    <None Include="wwwroot\css\color-css\home-2-color.css" />
+    <None Include="wwwroot\css\color-css\home-6-color.css" />
+    <None Include="wwwroot\css\fancybox\blank.gif" />
+    <None Include="wwwroot\css\fancybox\fancybox_loading.gif" />
+    <None Include="wwwroot\css\fancybox\fancybox_loading@2x.gif" />
+    <None Include="wwwroot\css\fancybox\fancybox_overlay.png" />
+    <None Include="wwwroot\css\fancybox\fancybox_sprite.png" />
+    <None Include="wwwroot\css\fancybox\fancybox_sprite@2x.png" />
+    <None Include="wwwroot\css\fancybox\jquery.fancybox.css" />
+    <None Include="wwwroot\css\fancybox\Thumbs.db" />
+    <None Include="wwwroot\css\font-awesome.min.css" />
+    <None Include="wwwroot\css\images\bx_loader.gif" />
+    <None Include="wwwroot\css\images\controls.png" />
+    <None Include="wwwroot\css\images\Thumbs.db" />
+    <None Include="wwwroot\css\jquery-ui.css" />
+    <None Include="wwwroot\css\jquery.bxslider.min.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\mobile_menu.min.css" />
+    <None Include="wwwroot\css\normalize.css" />
+    <None Include="wwwroot\css\owl.carousel.css" />
+    <None Include="wwwroot\css\owl.theme.css" />
+    <None Include="wwwroot\css\owl.transitions.css" />
+    <None Include="wwwroot\css\responsive.css" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\img\all-bannars\1.jpg" />
+    <None Include="wwwroot\img\all-bannars\2.jpg" />
+    <None Include="wwwroot\img\all-bannars\3.jpg" />
+    <None Include="wwwroot\img\all-bannars\4.jpg" />
+    <None Include="wwwroot\img\all-bannars\5.jpg" />
+    <None Include="wwwroot\img\all-bannars\6.jpg" />
+    <None Include="wwwroot\img\all-bannars\7.jpg" />
+    <None Include="wwwroot\img\all-bannars\8.jpg" />
+    <None Include="wwwroot\img\all-bannars\about-us.jpg" />
+    <None Include="wwwroot\img\all-icons\bg-fashion.png" />
+    <None Include="wwwroot\img\all-icons\bg-header.png" />
+    <None Include="wwwroot\img\all-icons\bg-health.png" />
+    <None Include="wwwroot\img\all-icons\bg-mobile1.png" />
+    <None Include="wwwroot\img\all-icons\bkg_category.png" />
+    <None Include="wwwroot\img\all-icons\down-arrow.png" />
+    <None Include="wwwroot\img\all-icons\down-arrowblk.png" />
+    <None Include="wwwroot\img\all-icons\furniture.png" />
+    <None Include="wwwroot\img\all-icons\icon-baby.png" />
+    <None Include="wwwroot\img\all-icons\icon-camera %281%29.png" />
+    <None Include="wwwroot\img\all-icons\icon-camera.png" />
+    <None Include="wwwroot\img\all-icons\icon-destop.png" />
+    <None Include="wwwroot\img\all-icons\icon-fashion.png" />
+    <None Include="wwwroot\img\all-icons\icon-furniture.png" />
+    <None Include="wwwroot\img\all-icons\icon-health.png" />
+    <None Include="wwwroot\img\all-icons\icon-houseware_1.png" />
+    <None Include="wwwroot\img\all-icons\icon-mobile.png" />
+    <None Include="wwwroot\img\all-icons\icon-toy.png" />
+    <None Include="wwwroot\img\all-icons\icon-watches.png" />
+    <None Include="wwwroot\img\all-icons\i_page1.gif" />
+    <None Include="wwwroot\img\all-icons\i_page2.gif" />
+    <None Include="wwwroot\img\all-icons\star-active.png" />
+    <None Include="wwwroot\img\all-icons\star.png" />
+    <None Include="wwwroot\img\Thumbs.db" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\bx-slider.min.js" />
+    <None Include="wwwroot\js\countdown.js" />
+    <None Include="wwwroot\js\jquery.appear.js" />
+    <None Include="wwwroot\js\jquery.easing.1.3.min.js" />
+    <None Include="wwwroot\js\jquery.elevatezoom.js" />
+    <None Include="wwwroot\js\jquery.fancybox.pack.js" />
+    <None Include="wwwroot\js\jquery.mixitup.min.js" />
+    <None Include="wwwroot\js\jquery.mobilemenu.js" />
+    <None Include="wwwroot\js\jquery.scrollUp.min.js" />
+    <None Include="wwwroot\js\jquery.treeview.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\owl.carousel.min.js" />
+    <None Include="wwwroot\js\parallax.js" />
+    <None Include="wwwroot\js\plugins.js" />
+    <None Include="wwwroot\js\price_slider.js" />
+    <None Include="wwwroot\js\rs-slider.js" />
+    <None Include="wwwroot\js\vendor\jquery-1.11.3.min.js" />
+    <None Include="wwwroot\js\vendor\modernizr-2.8.3.min.js" />
+    <None Include="wwwroot\js\wow.js" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrowleft.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrowright.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrows.psd" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_large_left.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_large_right.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_left.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_left2.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_right.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\arrow_right2.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\black50.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\boxed_bgtile.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\bullet.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\bullets.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\bullets.psd" />
+    <None Include="wwwroot\lib\rs-plugin\assets\bullets2.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\bullet_boxed.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\coloredbg.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\grain.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\gridtile.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\gridtile_3x3.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\gridtile_3x3_white.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\gridtile_white.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\large_left.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\large_right.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\loader (1).gif" />
+    <None Include="wwwroot\lib\rs-plugin\assets\loader.gif" />
+    <None Include="wwwroot\lib\rs-plugin\assets\navigdots.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\navigdots_bgtile.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\shadow1.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\shadow2.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\shadow3.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\small_arrows.psd" />
+    <None Include="wwwroot\lib\rs-plugin\assets\small_left.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\small_left_boxed.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\small_right.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\small_right_boxed.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\Thumbs.db" />
+    <None Include="wwwroot\lib\rs-plugin\assets\timer.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\timerdot.png" />
+    <None Include="wwwroot\lib\rs-plugin\assets\transparent.jpg" />
+    <None Include="wwwroot\lib\rs-plugin\assets\white50.png" />
+    <None Include="wwwroot\lib\rs-plugin\css\settings-ie8.css" />
+    <None Include="wwwroot\lib\rs-plugin\css\settings.css" />
+    <None Include="wwwroot\lib\rs-plugin\font\revicons.eot" />
+    <None Include="wwwroot\lib\rs-plugin\font\revicons.svg" />
+    <None Include="wwwroot\lib\rs-plugin\font\revicons.ttf" />
+    <None Include="wwwroot\lib\rs-plugin\font\revicons.woff" />
+    <None Include="wwwroot\lib\rs-plugin\images\decor_inside.png" />
+    <None Include="wwwroot\lib\rs-plugin\images\decor_inside_white.png" />
+    <None Include="wwwroot\lib\rs-plugin\images\decor_testimonial.png" />
+    <None Include="wwwroot\lib\rs-plugin\images\gradient\g30.png" />
+    <None Include="wwwroot\lib\rs-plugin\images\gradient\g40.png" />
+    <None Include="wwwroot\lib\rs-plugin\images\gradient\Thumbs.db" />
+    <None Include="wwwroot\lib\rs-plugin\images\Thumbs.db" />
+    <None Include="wwwroot\lib\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <None Include="wwwroot\lib\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <None Include="wwwroot\lib\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <None Include="wwwroot\lib\rs-plugin\js\jquery.themepunch.tools.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
+    <PackageReference Include="PagedList.Core" Version="1.17.4" />
+    <PackageReference Include="PagedList.Core.Mvc" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>

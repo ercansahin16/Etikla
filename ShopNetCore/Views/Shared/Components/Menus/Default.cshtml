@@ -1,0 +1,317 @@
+﻿@model IEnumerable<Category>
+@inject IHttpContextAccessor Accessor
+@* MENULER (MENUS) *@
+
+<!-- start preloader -->
+@* <div id="loader-wrapper">
+   <div class="logo"></div>
+   <div id="loader">
+   </div>
+   </div> *@
+<!-- end preloader -->
+<!-- header area start -->
+
+<style>
+  .fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .UserName {
+    position: fixed; /* Sabit bir konum belirler */
+    top: 105px; /* Sayfanın üst kısmından 10px boşluk bırakır */
+    right: 1%; /* Sayfanın sağ kısmından 10px boşluk bırakır */
+    z-index: 1000; /* Ögelerin üstünde kalmasını sağlamak için yüksek bir z-index değeri */
+    padding: 10px; /* İç boşluk ekler */
+    border-radius: 5px; /* Köşeleri yuvarlatır (isteğe bağlı) */
+  }
+
+    .UserName ul {
+      list-style-type: none; /* Liste işaretlerini kaldırır */
+      margin: 0;
+      padding: 0;
+    }
+
+    .UserName li {
+      display: inline-block; /* Listeleri yan yana dizmek için kullanılır */
+      font-size: 16px;
+    }
+
+</style>
+
+  
+<div class="fixed-menu">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+
+          @{
+            var username = Accessor.HttpContext!.Session.GetString("Email");
+          }
+          <div class="logo-area">
+            <a href="/Home/Index/">
+              <img src="~/resimler/newlogo.png" alt="logo" style="width:200px;height:62px;margin-bottom:10px; margin-left:10px;"/> 
+              </a>
+          </div>
+          <div class="UserName ">
+            @if (username != null)
+            {
+
+
+              <ul>
+                <li style=" float:left;"><p style=" float:right;color:#fff"> Hoşgeldiniz</p></li>
+                <li><strong style="text-transform: lowercase; float:left;color:#F47E1E;margin-left:20px"> @username</strong></li>
+
+              </ul>
+
+            }
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="top-nav-area">
+            <ul>
+
+              <li>
+                <a href="/Home/NewProducts/">
+                  <i class="fa fa-filter"></i>
+                  <div class="nav-select">
+                    <div class="text_menu">
+                      YENİ ÜRÜNLER
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/Home/SpecialProducts/">
+                  <i class="fa fa-star"></i>
+                  <div class="nav-select">
+                    <div class="text_menu">
+                      ÖZEL ÜRÜNLER
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/Home/DiscountedProducts/">
+                  <i class="fa fa-tag"></i>
+                  <div class="nav-select">
+                    <div class="text_menu">
+                      İNDİRİMLİ ÜRÜNLER
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/Home/HighlightedProducts/">
+                  <i class="fa fa-heart"></i>
+                  <div class="nav-select">
+                    <div class="text_menu">
+                      ÖNE ÇIKANLAR
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/Home/TopsellerProducts/">
+                  <i class="fa fa-arrow-up"></i>
+                  <div class="nav-select">
+                    <div class="text_menu">
+                      ÇOK SATANLAR
+                    </div>
+                  </div>
+                </a>
+              </li>
+              @if (username != null)
+              {
+                <li>
+                  <a href="/Home/MyOrders/">
+                    <i class="fa fa-gift"></i>
+                    <div class="nav-select">
+                      <div class="text_menu">
+                        SİPARİŞLERİM
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              }
+              <li>
+                <a href="/Home/Cart/">
+                  <div class="cart_area">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="nav-select">
+                      <div class="text_menu">
+                        Sepetim
+                        @await Component.InvokeAsync("CardSummary")
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main menu area start  -->
+  <div class="main-menu-area ">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-sm-8 col-md-3 col-lg-3">
+          <div class="menu-cat-area">
+            <h3 class="nk-module-title"><span>KATEGORİ</span></h3>
+            <div class="nk-all-items" style="display:none;">
+              <div class="sp-module-content">
+                <!-- treeview -->
+                <div class="vina-treeview-virtuemart" id="vina-treeview-virtuemart93">
+                  <ul class="level0 treeview">
+                    @foreach (var item in Model.Where(x => x.ParentID == 0))
+                    {
+                      <li>
+                        <a title="@item.CategoryName" href="/Home/CategoryPage/@item.CategoryID">
+                          <span class="catTitle ">@item.CategoryName</span>
+                        </a>
+                        @* Alt kategorileri var mı  *@
+                        @* @foreach (var subitem in Model.Where(x => x.ParentID == item.CategoryID))
+                        {
+                          
+                          <ul class="sub-menu treeview" style="display:none;">
+                            <li class="expandable">
+                              <a title="@subitem.CategoryName" href="/Home/CategoryPage/@subitem.CategoryID" class="">
+                                <span class="catTitle ">@subitem.CategoryName</span>
+                              </a>
+                            </li>
+                          </ul>
+                        } *@
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2 col-sm-3 col-md-9 col-lg-9">
+          <nav>
+            <ul>
+              <li class="active">
+                <a href="/Home/Index/">Ana Sayfa</a>
+                
+              </li>
+              @if (username == null)
+              {
+                <li><a href="/Home/Login">GİRİŞ</a></li>
+                <li><a href="/Home/Register">ÜYE OL</a></li>
+              }
+              else
+              {
+
+                <li><a href="/Home/Logout">ÇIKIŞ</a></li>
+              }
+              <li><a href="/Home/AboutUs">HAKKIMIZDA</a></li>
+              <li><a href="/Home/ContactUs">İLETİŞİM</a></li>
+              <li><a href="/Home/DetailedSearch">DETAYLI ARAMA</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- main menu area end  -->
+  <!-- mobile-menu-area start -->
+
+  <div class="mobile-menu-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mobile-menu">
+            <nav id="dropdown">
+              <ul>
+                <li>
+                  <a href="/Home/Index/">ANASAYFA</a>
+                </li>
+                <li><a href="/Home/AboutUs">HAKKIMIZDA</a></li>
+                <li><a href="/Home/ContactUs">İLETİŞİM</a></li>
+                <li><a href="/Home/DetailedSearch">DETAYLI ARAMA</a></li>
+                
+                <li><a href="/Home/DiscountedProducts/">İNDİRİMLİ ÜRÜNLER</a></li>
+                <li><a href="/Home/Cart/">SEPETİM</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mobile-menu-area end -->
+  <!-- search area start  -->
+  <div class="nk-search-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+          <div class="nk-search">
+            <div class="search_input">
+
+              <input type="text" lang="tr" id="search" placeholder="Ürün, Kategori veya Marka Ara..." name="search" style="width:869px" />
+              <br />
+              <div id="dv" style="width:869px;height:auto;margin-top:23px; border-style:solid;background-color:white;border-color:#FF6A00;position:absolute;z-index:10000;">
+
+                @*  <ul id="sul">
+                </ul> *@
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main menu area end  -->
+  </div>
+</div>
+<script>
+  //Arama alanı için scripts, 2. harf basılınca çalısacak
+  $("#search").keyup(function () {
+    var id = $("#search").val();
+
+    if (id.length > 1) {
+      $.ajax({
+        url: '/Home/gettingProducts/' + id,
+        type: 'POST',
+        contentType: "application/json; charset=UTF-8",
+        success: function (result) {
+          $("#sul").remove();
+          $("#dv").append("<ul id='sul'>");
+          $("#sul").append(result);
+          $("#dv").append("</ul>");
+        }
+
+      })
+    }
+    else {
+      $("#sul").remove();
+    }
+
+  });
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+

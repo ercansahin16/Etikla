@@ -1,0 +1,35 @@
+﻿@*
+   Sepet Ürün Sayısı
+*@
+<style>
+  .card-summary {
+    position: relative;
+  }
+
+  .card-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+
+</style>
+
+<div id="cart-summary-container">
+  @if (Model > 0)
+  {
+    <div class="card-summary">
+      <div class="card-count">
+        @Model
+      </div>
+    </div>
+  }
+</div>
